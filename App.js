@@ -9,6 +9,7 @@ const Stack = createStackNavigator();
 
 // componentes
 import HomeComponent from './components/Home'
+import DetailsComponent from './components/Details'
 
 const App = () => {
 
@@ -19,6 +20,11 @@ const App = () => {
           name="Home"
           options={{ title: 'About Crypto' }}
           component={HomeComponent}
+        />
+        <Stack.Screen
+          name="Details"
+          options={{ title: 'Details crypto' }}
+          component={DetailsComponent}
         />
       </Stack.Navigator>
     </NavigationContainer>
