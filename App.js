@@ -1,14 +1,27 @@
+// navegacion
+import 'react-native-gesture-handler';
+
 import React from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+// componentes
+import HomeComponent from './components/Home'
 
 const App = () => {
 
   return (
-    <SafeAreaView>
-      <View>
-        <Text>Iniciando proyecto</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          options={{ title: 'About Crypto' }}
+          component={HomeComponent}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
